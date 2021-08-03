@@ -3,3 +3,18 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer base {
+    html {
+        @apply text-gray-900 dark:text-white;
+        @apply leading-tight;
+    }
+    body {
+        @apply min-h-screen bg-gray-50 dark:bg-gray-800;
+    }
+    @font-face {
+        font-family: 'Rubik', sans-serif;
+        font-weight: 400;
+        src: url(https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap);
+    }
+}
