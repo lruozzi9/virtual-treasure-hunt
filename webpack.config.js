@@ -22,6 +22,16 @@ Encore
      */
     .addEntry('app', './assets/app.js')
 
+    .addStyleEntry('tailwind', './assets/styles/tailwind.css')
+
+    // enable post css loader
+    .enablePostCssLoader((options) => {
+        options.postcssOptions = {
+            // directory where the postcss.config.js file is stored
+            path: './postcss.config.js'
+        };
+    })
+
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
