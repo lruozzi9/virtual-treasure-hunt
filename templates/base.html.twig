@@ -12,8 +12,19 @@
         {% endblock %}
     </head>
     <body>
-        <div class="px-4">
-            {% block body %}{% endblock %}
+        <div class="p-4">
+            <div class="text-5xl font-normal">
+                {{ 'app.ui.title'|trans }}
+            </div>
+            {% block content %}{% endblock %}
+
+            <div class="box-border mt-56 lg:w-2/3 p-4 border-4">
+                <h3 class="text-xl font-bold">{{ 'app.ui.instructions_label'|trans }}</h3>
+                <hr />
+                <div class="my-2.5 font-normal text-base">
+                    {{ 'app.ui.instructions'|trans|raw }}
+                </div>
+            </div>
         </div>
     </body>
 </html>
