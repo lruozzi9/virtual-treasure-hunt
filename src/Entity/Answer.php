@@ -17,29 +17,8 @@ class Answer implements AnswerInterface
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $code = null;
-
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getCode(): ?string
-    {
-        return $this->code;
-    }
-
-    /**
-     * @param string|null $code
-     */
-    public function setCode(?string $code): void
-    {
-        $this->code = $code;
     }
 }
