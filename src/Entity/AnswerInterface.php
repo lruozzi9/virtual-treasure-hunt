@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
-interface AnswerInterface
+use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
+
+interface AnswerInterface extends TranslatableInterface
 {
     public function getId(): ?int;
 

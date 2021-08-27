@@ -1,4 +1,7 @@
 {
+    "brick/math": {
+        "version": "0.9.3"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.2"
     },
@@ -88,6 +91,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "knplabs/doctrine-behaviors": {
+        "version": "2.2.0"
+    },
     "laminas/laminas-code": {
         "version": "4.4.2"
     },
@@ -96,6 +102,9 @@
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
+    },
+    "nette/utils": {
+        "version": "v3.2.3"
     },
     "nikic/php-parser": {
         "version": "v4.12.0"
@@ -164,6 +173,12 @@
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "ramsey/collection": {
+        "version": "1.2.1"
+    },
+    "ramsey/uuid": {
+        "version": "4.2.1"
     },
     "roave/security-advisories": {
         "version": "dev-master"
