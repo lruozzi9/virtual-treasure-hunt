@@ -1,4 +1,6 @@
 {
+    "name": "lruozzi9/virtual-treasure-hunt",
+    "description": "Virtual treasure hunt web app",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
