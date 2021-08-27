@@ -22,6 +22,12 @@ class Question implements QuestionInterface
      */
     private string $code;
 
+    /**
+     * One Question has One Answer.
+     * @ORM\OneToOne(targetEntity="App\Entity\Answer", mappedBy="question", cascade={"persist", "remove"})
+     */
+    private AnswerInterface $answer;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,5 +41,15 @@ class Question implements QuestionInterface
     public function setCode(string $code): void
     {
         $this->code = $code;
+    }
+
+    public function getAnswer(): AnswerInterface
+    {
+        return $this->answer;
+    }
+
+    public function setAnswer(AnswerInterface $answer): void
+    {
+        $this->answer = $answer;
     }
 }

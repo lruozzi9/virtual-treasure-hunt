@@ -17,8 +17,25 @@ class Answer implements AnswerInterface
      */
     private $id;
 
+    /**
+     * One Answer has One Question.
+     * @ORM\OneToOne(targetEntity="App\Entity\Question", inversedBy="answer", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="question_id", referencedColumnName="id", nullable=false, unique=true)
+     */
+    private QuestionInterface $question;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getQuestion(): QuestionInterface
+    {
+        return $this->question;
+    }
+
+    public function setQuestion(QuestionInterface $question): void
+    {
+        $this->question = $question;
     }
 }
