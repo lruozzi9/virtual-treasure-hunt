@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\QuestionRepository;
@@ -27,6 +29,7 @@ class Question implements QuestionInterface
 
     /**
      * One Question has One Answer.
+     *
      * @ORM\OneToOne(targetEntity="App\Entity\Answer", mappedBy="question", cascade={"persist", "remove"})
      */
     private AnswerInterface $answer;
