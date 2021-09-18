@@ -48,6 +48,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "phpspec/phpspec": "^7.1",
         "phpstan/phpstan": "^0.12.96",
         "phpunit/phpunit": "^9.5",
         "roave/security-advisories": "dev-latest",
