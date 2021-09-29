@@ -22,7 +22,7 @@ class DashboardController extends AbstractDashboardController
     }
 
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/%app_admin.path_name%", name="app_admin")
      */
     public function index(): Response
     {

@@ -1,3 +1,6 @@
+parameters:
+    security.admin_regex: "^/%app_admin.path_name%"
+
 security:
     # https://symfony.com/doc/current/security/experimental_authenticators.html
     enable_authenticator_manager: true
@@ -16,9 +19,25 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        admin:
+            provider: app_user_provider
+            pattern: "%security.admin_regex%"
+            form_login:
+                login_path: "app_admin_login"
+                check_path: "app_admin_login_check"
+                enable_csrf: true
+                default_target_path: "app_admin"
+            entry_point: form_login
+            custom_authenticator: App\Security\AppAdminAuthenticator
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     "%security.admin_regex%"
+            logout:
+                path: app_admin_logout
+                target: app_homepage
         main:
             lazy: true
-            provider: app_user_provider
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -29,5 +48,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: "%security.admin_regex%/login", roles: PUBLIC_ACCESS }
+        - { path: "%security.admin_regex%", roles: ROLE_ADMIN }
